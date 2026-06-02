@@ -32,18 +32,13 @@ body {
     left: 0;               /* Menaruh logo di ujung paling kiri */
     top: 50%;              /* Mengatur posisi vertikal di tengah */
     transform: translateY(-50%); /* Menyempurnakan posisi logo agar pas di tengah secara vertikal */
-    width: 70px;           /* Ukuran lebar logo (silakan sesuaikan) */
+    width: 100px;           /* Ukuran lebar logo (silakan sesuaikan) */
     height: auto;
-}
-.info-sekolah h1 {
-    margin: 0;
-    font-size: 32px;
-    text-align: center;
 }
 
 .info-sekolah h2 {
-    margin: 5px 0 0 0;
-    font-size: 25px;
+    margin: 0;
+    font-size: 20px;
     font-weight: normal;
     text-align: center;
 }
@@ -98,9 +93,13 @@ body {
 .info-table, .section-table, .attendance-table {
     width: 100%;
     border-collapse: collapse;
+    margin-bottom: 30px;
+    font-size: 14px;
 }
-.info-table td { padding: 6px 8px; }
-.info-table td[id^="prev"]::before { content: ": "; font-weight: bold; }
+.info-table td { padding: 6px 8px; vertical-align: top;
+    white-space: nowrap;}
+.info-table td[id^="prev"]::before { content: ": "; font-weight: bold; white-space: normal; 
+    padding-left: 8px;}
 
 .section-table th {
     background-color: #f2f2f2;

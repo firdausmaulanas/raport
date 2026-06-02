@@ -26,8 +26,8 @@ function prosesGambar(inputId, previewId) {
 async function generateRaport() {
     // Ambil data teks biasa
     document.getElementById('prevNama').innerText = document.getElementById('nama').value;
-    document.getElementById('prevKelas').innerText = document.getElementById('kelas').value;
-    document.getElementById('prevNisn').innerText = document.getElementById('nisn').value;
+    document.getElementById('prevlahir').innerText = document.getElementById('lahir').value;
+    document.getElementById('prevInduk').innerText = document.getElementById('induk').value;
     document.getElementById('prevSemester').innerText = document.getElementById('semester').value;
     document.getElementById('prevAgama').innerText = document.getElementById('agama').value;
     document.getElementById('prevdiri').innerText = document.getElementById('diri').value;
