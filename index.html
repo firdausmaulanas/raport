@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generator Raport</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="form-section">
+  <input type="text" id="nama" placeholder="Nama">
+  <input type="text" id="kelas" placeholder="Kelas">
+  <input type="text" id="nisn" placeholder="NIS/NISN">
+  <input type="text" id="alamat" placeholder="Alamat">
+  <input type="text" id="semester" placeholder="Semester">
+  <input type="text" id="tahun" placeholder="Tahun Ajaran">
+  
+  <textarea id="agama" placeholder="Nilai Agama dan Budi Pekerti"></textarea>
+  <textarea id="diri" placeholder="Jati Diri"></textarea>
+  <textarea id="literasi" placeholder="Dasar-dasar Literasi, Matematika, Sains, Teknologi, Rekayasa, Seni"></textarea>
+  
+  <textarea id="kokurikuler" placeholder="Nilai Kokurikuler..."></textarea>
+  
+  <label style="grid-column: span 2; font-size: 13px; font-weight: bold; color: #555; margin-bottom: -10px;">Pilih Foto Kegiatan agama:</label>
+  <input type="file" id="inputFotoagama1" accept="image/*">
+  <input type="file" id="inputFotoagama2" accept="image/*">
+
+  <label style="grid-column: span 2; font-size: 13px; font-weight: bold; color: #555; margin-bottom: -10px;">Pilih Foto Kegiatan jati diri:</label>
+  <input type="file" id="inputFotojatidiri1" accept="image/*">
+  <input type="file" id="inputFotojatidiri2" accept="image/*">
+
+  <label style="grid-column: span 2; font-size: 13px; font-weight: bold; color: #555; margin-bottom: -10px;">Pilih Foto Kegiatan Dasar-dasar literasi:</label>
+  <input type="file" id="inputFoto1" accept="image/*">
+  <input type="file" id="inputFoto2" accept="image/*">
+
+  <input type="number" id="sakit" placeholder="Jumlah Sakit (Hari)">
+  <input type="number" id="izin" placeholder="Jumlah Izin (Hari)">
+  <input type="number" id="alpa" placeholder="Jumlah Alpa (Hari)">
+
+  <textarea id="catatan" placeholder="Catatan Pendidik..."></textarea>
+  <input type="text" id="kenaikan" placeholder="Keterangan Kenaikan Kelas">
+  <input type="text" id="tglCetak" placeholder="Tempat, Tanggal Cetak">
+  <input type="text" id="namaGuru" placeholder="Nama Wali Kelas">
+  <input type="text" id="nipGuru" placeholder="NIP Wali Kelas">
+  <input type="text" id="namaKepsek" placeholder="Nama Kepala Sekolah">
+  <input type="text" id="nipKepsek" placeholder="NIP Kepala Sekolah">
+
+  <button onclick="generateRaport()">Generate</button>
+  <button onclick="window.print()">Cetak PDF</button>
+</div>
+
+<div class="page" id="raport">
+
+ <div class="header-raport">
+    <img src="logo.png" alt="Logo Sekolah" class="logo-sekolah">
+    <div class="info-sekolah">
+    <h1>LAPORAN PERKEMBANGAN SISWA</h1>
+    <h2>TK PUSPASARI I SURABAYA </h2>
+      </div>
+  </div>
+  
+  <table class="info-table">
+    <tr>
+      <td width="25%">Nama</td>
+      <td width="35%" id="prevNama"></td>
+      <td width="20%">Kelas</td>
+      <td width="20%" id="prevKelas"></td>
+    </tr>
+    <tr>
+      <td>NIS/NISN</td>
+      <td id="prevNisn"></td>
+      <td>Semester</td>
+      <td id="prevSemester"></td>
+    </tr>
+    <tr>
+      <td>Alamat</td>
+      <td id="prevAlamat"></td>
+      <td>Tahun Ajaran</td>
+      <td id="prevTahun"></td>
+    </tr>
+  </table>
+  <table class="section-table">
+    <tr>
+      <th>Nilai Agama dan Budi Pekerti</th>
+    </tr>
+    <tr>
+      <td id="prevAgama"></td>
+    </tr>
+    <td class="photo-container">
+          <img id="prevFotoagama1" src="" alt="Foto agama 1" class="foto-kegiatan" style="display:none;">
+          <img id="prevFotoagama2" src="" alt="Foto agama 2" class="foto-kegiatan" style="display:none;">
+    </td>
+  </table>
+
+  <table class="section-table">
+    <tr>
+      <th>Jati diri</th>
+    </tr>
+    <tr>
+      <td id="prevdiri"></td>
+    </tr>
+    <tr>
+        <td class="photo-container">
+          <img id="prevFotojatidiri1" src="" alt="Foto jatidiri 1" class="foto-kegiatan" style="display:none;">
+          <img id="prevFotojatidiri2" src="" alt="Foto jatidiri 2" class="foto-kegiatan" style="display:none;">
+        </td>
+      </tr>
+  </table>
+
+  <table class="section-table">
+    <tr>
+      <th>Dasar-dasar Literasi, Matematika, Sains, Teknologi, Rekayasa, Seni</th>
+    </tr>
+    <tr>
+      <td id="prevliterasi"></td>
+    </tr>
+    <td class="photo-container">
+          <img id="prevFoto1" src="" alt="Foto 1" class="foto-kegiatan" style="display:none;">
+          <img id="prevFoto2" src="" alt="Foto 2" class="foto-kegiatan" style="display:none;">
+    </td>
+  </table>
+
+  <div class="blok-bawah">
+    
+    <h3 class="sub-title">Kokurikuler</h3>
+    <table class="section-table text-box">
+      <tr>
+        <td id="prevKokurikuler"></td>
+      </tr>
+      
+    </table>
+
+    <h3 class="sub-title">Ketidakhadiran</h3>
+    <table class="attendance-table">
+      <tr>
+        <td width="40%"><strong>Sakit</strong></td>
+        <td width="20%" id="prevSakit" class="text-center"></td>
+        <td width="40%">Hari</td>
+      </tr>
+      <tr>
+        <td><strong>Izin</strong></td>
+        <td id="prevIzin" class="text-center"></td>
+        <td>Hari</td>
+      </tr>
+      <tr>
+        <td><strong>Alpa</strong></td>
+        <td id="prevAlpa" class="text-center"></td>
+        <td>Hari</td>
+      </tr>
+    </table>
+
+    <h3 class="sub-title">Catatan Pendidik</h3>
+    <table class="section-table text-box">
+      <tr><td id="prevCatatan"></td></tr>
+    </table>
+
+    <h3 class="sub-title">Tanggapan Orang Tua/Wali</h3>
+    <table class="section-table text-box">
+      <tr><td style="height: 60px;"></td></tr>
+    </table>
+
+    <div class="promotion-box">
+      Keterangan Kenaikan Kelas: <strong id="prevKenaikan"></strong>
+    </div>
+
+    <div class="signature-section">
+      <div class="sig-top">
+        <div class="sig-col">
+          <br>Orang Tua/Wali
+          <div class="space-ttd"></div>
+          ___________________
+        </div>
+        <div class="sig-col">
+          <span id="prevTglCetak"></span><br>Wali Kelas
+          <div class="space-ttd"></div>
+          <strong id="prevNamaGuru"></strong><br>NIP. <span id="prevNipGuru"></span>
+        </div>
+      </div>
+      <div class="sig-bottom">
+        <div class="sig-col-center">
+          Mengetahui<br>Kepala RA
+          <div class="space-ttd"></div>
+          <strong id="prevNamaKepsek"></strong><br>NIP. <span id="prevNipKepsek"></span>
+        </div>
+      </div>
+    </div>
+
+  </div> </div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ==========================================
+   HEADER DENGAN LOGO DI SEBELAH KIRI BANGET
+   ========================================== */
+.header-raport {
+    position: relative;    /* Menjadi acuan patokan untuk posisi logo */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Memastikan judul H1 tetap persis di tengah */
+    min-height: 80px;        /* Menyesuaikan tinggi area header dengan tinggi logo */
+    margin-bottom: 30px;     /* Jarak ke tabel di bawahnya */
+    border-bottom: 2px solid #111; /* Opsional: Memberi garis batas bawah seperti kop surat */
+    padding-bottom: 15px;
+}
+
+.logo-sekolah {
+    position: absolute;    /* Mengunci posisi gambar secara independen */
+    left: 0;               /* Menaruh logo di ujung paling kiri */
+    top: 50%;              /* Mengatur posisi vertikal di tengah */
+    transform: translateY(-50%); /* Menyempurnakan posisi logo agar pas di tengah secara vertikal */
+    width: 70px;           /* Ukuran lebar logo (silakan sesuaikan) */
+    height: auto;
+}
+.info-sekolah h1 {
+    margin: 0;
+    font-size: 32px;
+    text-align: center;
+}
+
+.info-sekolah h2 {
+    margin: 5px 0 0 0;
+    font-size: 25px;
+    font-weight: normal;
+    text-align: center;
+}
+.form-section {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+.form-section textarea, .form-section button {
+    grid-column: span 2;
+}
+.form-section input, .form-section textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.form-section button {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.form-section button:nth-of-type(1) { background-color: #2ecc71; }
+.form-section button:nth-of-type(2) { background-color: #3498db; margin-top: -5px; }
+
+/* RAPORT LAYOUT */
+.page {
+    background: #ffffff;
+    width: 210mm;
+    min-height: 297mm;
+    padding: 20px 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ddd;
+}
+.page h1 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+.info-table, .section-table, .attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.info-table td { padding: 6px 8px; }
+.info-table td[id^="prev"]::before { content: ": "; font-weight: bold; }
+
+.section-table th {
+    background-color: #f2f2f2;
+    border: 1px solid #111;
+    padding: 10px;
+    text-align: center;
+}
+.section-table td, .attendance-table td {
+    border: 1px solid #111;
+    padding: 12px;
+}
+
+/* Bagian Sub Judul & Foto */
+.sub-title { font-size: 15px; margin-top: 15px; margin-bottom: 5px; }
+.photo-container {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 15px !important;
+}
+.foto-kegiatan {
+    max-width: 45%;
+    height: 150px;
+    object-fit: cover;
+    border: 1px solid #111;
+}
+.text-center { text-align: center; }
+.promotion-box { border: 1px solid #111; padding: 8px 10px; margin-top: 20px; }
+
+/* TTD Layout */
+.signature-section { width: 100%; margin-top: 30px; }
+.sig-top { display: flex; justify-content: space-between; }
+.sig-bottom { display: flex; justify-content: center; margin-top: 25px; }
+.sig-col { width: 35%; }
+.sig-col:last-child { padding-left: 50px; }
+.sig-col-center { width: 40%; text-align: center; }
+.space-ttd { height: 65px; }
+
+/* PRINT SETUP */
+@media print {
+    
+    .form-section { display: none !important; }
+    .page { border: none; box-shadow: none; width: 100%; }
+    .blok-bawah { page-break-inside: avoid !important; break-inside: avoid !important; }
+}
