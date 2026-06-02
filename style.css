@@ -141,8 +141,26 @@ body {
 
 /* PRINT SETUP */
 @media print {
-    
+    @page { 
+        /* Biarkan browser mendeteksi otomatis ukuran dari sistem */
+        margin: 1.5cm; 
+    }
     .form-section { display: none !important; }
-    .page { border: none; box-shadow: none; width: 100%; }
+    .page { 
+        border: none; 
+        box-shadow: none; 
+        width: 100% !important;     /* Memaksa penuh sesuai kertas yang dipilih */
+        max-width: 100% !important; /* Menghapus batasan maksimal saat cetak */
+        padding: 0 !important;
+        margin: 0 !important;
+    }
     .blok-bawah { page-break-inside: avoid !important; break-inside: avoid !important; }
+    /* Memastikan teks identitas tetap aman sejajar */
+    .info-table td {
+        white-space: nowrap !important; 
+        padding: 5px 2px;
+    }
+    .info-table td[id^="prev"] {
+        white-space: normal !important; 
+    }
 }
