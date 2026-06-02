@@ -40,9 +40,7 @@
   <input type="text" id="kenaikan" placeholder="Keterangan Kenaikan Kelas">
   <input type="text" id="tglCetak" placeholder="Tempat, Tanggal Cetak">
   <input type="text" id="namaGuru" placeholder="Nama Wali Kelas">
-  <input type="text" id="nipGuru" placeholder="NIP Wali Kelas">
   <input type="text" id="namaKepsek" placeholder="Nama Kepala Sekolah">
-  <input type="text" id="nipKepsek" placeholder="NIP Kepala Sekolah">
 
   <button onclick="generateRaport()">Generate</button>
   <button onclick="window.print()">Cetak PDF</button>
@@ -53,7 +51,7 @@
  <div class="header-raport">
     <img src="logo.png" alt="Logo Sekolah" class="logo-sekolah">
     <div class="info-sekolah">
-    <h1>LAPORAN PERKEMBANGAN SISWA tahun pelajaran 2025/2026</h1>
+    <h1>LAPORAN PERKEMBANGAN SISWA <br> TAHUN PELAJARAN 2025/2026</h1>
     <h2>TK PUSPASARI I SURABAYA </h2>
       </div>
   </div>
@@ -166,14 +164,14 @@
         <div class="sig-col">
           <span id="prevTglCetak"></span><br>Wali Kelas
           <div class="space-ttd"></div>
-          <strong id="prevNamaGuru"></strong><br>NIP. <span id="prevNipGuru"></span>
+          <strong id="prevNamaGuru"></strong><br>
         </div>
       </div>
       <div class="sig-bottom">
         <div class="sig-col-center">
-          Mengetahui<br>Kepala RA
+          Mengetahui<br>Kepala Sekolah
           <div class="space-ttd"></div>
-          <strong id="prevNamaKepsek"></strong><br>NIP. <span id="prevNipKepsek"></span>
+          <strong id="prevNamaKepsek"></strong>
         </div>
       </div>
     </div>

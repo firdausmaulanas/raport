@@ -43,9 +43,8 @@ async function generateRaport() {
     document.getElementById('prevKenaikan').innerText = document.getElementById('kenaikan').value;
     document.getElementById('prevTglCetak').innerText = document.getElementById('tglCetak').value;
     document.getElementById('prevNamaGuru').innerText = document.getElementById('namaGuru').value;
-    document.getElementById('prevNipGuru').innerText = document.getElementById('nipGuru').value;
     document.getElementById('prevNamaKepsek').innerText = document.getElementById('namaKepsek').value;
-    document.getElementById('prevNipKepsek').innerText = document.getElementById('nipKepsek').value;
+    
 
     // PROSES KRITIKAL: Membaca Gambar 1 & Gambar 2 (Wajib ditunggu)
     await prosesGambar('inputFotojatidiri1', 'prevFotojatidiri1');
