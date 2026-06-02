@@ -28,9 +28,7 @@ async function generateRaport() {
     document.getElementById('prevNama').innerText = document.getElementById('nama').value;
     document.getElementById('prevKelas').innerText = document.getElementById('kelas').value;
     document.getElementById('prevNisn').innerText = document.getElementById('nisn').value;
-    document.getElementById('prevAlamat').innerText = document.getElementById('alamat').value;
     document.getElementById('prevSemester').innerText = document.getElementById('semester').value;
-    document.getElementById('prevTahun').innerText = document.getElementById('tahun').value;
     document.getElementById('prevAgama').innerText = document.getElementById('agama').value;
     document.getElementById('prevdiri').innerText = document.getElementById('diri').value;
     document.getElementById('prevliterasi').innerText = document.getElementById('literasi').value;
