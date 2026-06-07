@@ -104,14 +104,60 @@ body {
 .section-table th {
     background-color: #f2f2f2;
     border: 1px solid #111;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
 }
 .section-table td, .attendance-table td {
     border: 1px solid #111;
     padding: 12px;
 }
+/* ==========================================
+   LAYOUT BARU: FOTO KIRI, TEKS KANAN
+   ========================================== */
 
+/* Wadah utama di dalam sel TD */
+.content-flex-container {
+    display: flex !important;
+    flex-direction: row;      /* Memaksa elemen berjajar ke samping (Kiri-Kanan) */
+    align-items: stretch;     /* Menyamakan tinggi kolom kiri dan kanan */
+    gap: 20px;                /* Jarak pembatas antara area foto dan teks */
+    padding: 5px 0;
+}
+
+/* Sisi Kiri: Khusus menampung foto-foto */
+.photo-side {
+    display: flex;
+    gap: 10px;                /* Jarak antar foto jika ada 2 foto */
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;           /* Mencegah area foto mengecil secara paksa */
+}
+
+/* Mengatur ukuran foto agar tegak/rapi di sebelah kiri */
+.foto-kegiatan-side {
+    height: 160px;            /* Mengunci tinggi foto agar seragam seperti referensi */
+    /*width: auto;              /* Lebar proporsional otomatis agar gambar tidak gepeng */
+    width: 150px;         /* Batas lebar maksimal foto agar tidak memakan lapak teks */
+    border: 1px solid #111;   /* Bingkai hitam sesuai standar raport formal */
+    object-fit: cover;        /* Memotong gambar secara aman jika ukurannya berbeda */
+    border-radius: 2px;
+}
+
+/* Sisi Kanan: Khusus teks deskripsi rapot */
+.text-side {
+    flex-grow: 1;             /* Membiarkan teks mengambil sisa ruang kanan sepenuhnya */
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: justify;      /* Membuat teks rata kiri-kanan persis seperti di gambar */
+    text-indent: 30px;        /* Membuat baris pertama teks agak menjorok ke dalam */
+    padding-left: 5px;
+}
+
+/* Memastikan sel utama TD tidak memiliki padding bawaan yang merusak flex */
+.section-table td {
+    border: 1px solid #111;
+    padding: 12px !important;
+}
 /* Bagian Sub Judul & Foto */
 .sub-title { font-size: 15px; margin-top: 15px; margin-bottom: 5px; }
 .photo-container {

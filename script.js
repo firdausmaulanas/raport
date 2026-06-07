@@ -29,6 +29,7 @@ async function generateRaport() {
     document.getElementById('prevlahir').innerText = document.getElementById('lahir').value;
     document.getElementById('prevInduk').innerText = document.getElementById('induk').value;
     document.getElementById('prevSemester').innerText = document.getElementById('semester').value;
+    document.getElementById('prevpendahuluan').innerText = document.getElementById('pendahuluan').value;
     document.getElementById('prevAgama').innerText = document.getElementById('agama').value;
     document.getElementById('prevdiri').innerText = document.getElementById('diri').value;
     document.getElementById('prevliterasi').innerText = document.getElementById('literasi').value;
@@ -49,8 +50,8 @@ async function generateRaport() {
     // PROSES KRITIKAL: Membaca Gambar 1 & Gambar 2 (Wajib ditunggu)
     await prosesGambar('inputFotojatidiri1', 'prevFotojatidiri1');
     await prosesGambar('inputFotojatidiri2', 'prevFotojatidiri2');
-    await prosesGambar('inputFotoagama1', 'prevFotoagama1');
-    await prosesGambar('inputFotoagama2', 'prevFotoagama2');
+    await prosesGambar('inputFotoagama1', 'prevFotoAgama1');
+    await prosesGambar('inputFotoagama2', 'prevFotoAgama2');
     await prosesGambar('inputFoto1', 'prevFoto1');
     await prosesGambar('inputFoto2', 'prevFoto2');
     
