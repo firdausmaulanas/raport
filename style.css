@@ -182,7 +182,7 @@ body {
 .sig-bottom { display: flex; justify-content: center; margin-top: 25px; }
 .sig-col { width: 35%; }
 .sig-col:last-child { padding-left: 50px; }
-.sig-col-center { width: 40%; text-align: center; }
+.sig-col-center { width: 70%; text-align: right; }
 .space-ttd { height: 65px; }
 
 /* PRINT SETUP */
