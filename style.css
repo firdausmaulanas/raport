@@ -183,7 +183,7 @@ body {
 .signature-section { width: 100%; margin-top: 30px; }
 .sig-top { display: flex; justify-content: space-between; }
 .sig-bottom { display: flex; justify-content: center; margin-top: 25px; }
-.sig-col { width: 35%; }
+.sig-col { width: 35%; text-align: center;}
 .sig-col:last-child { padding-left: 50px; }
 .sig-col-center { width: 70%; text-align: right; }
 .space-ttd { height: 65px; }
