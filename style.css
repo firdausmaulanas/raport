@@ -175,6 +175,9 @@ body {
 }
 .text-center { text-align: center; }
 .promotion-box { border: 1px solid #111; padding: 8px 10px; margin-top: 20px; }
+.info-table {
+    font-weight: bold;
+}
 
 /* TTD Layout */
 .signature-section { width: 100%; margin-top: 30px; }
