@@ -45,13 +45,12 @@
 
   <button onclick="generateRaport()">Generate</button>
   <button onclick="window.print()">Cetak PDF</button>
-  <button onclick="exportKeWord()" class="btn-word">Export ke Word</button>
 </div>
 
 <div class="page" id="raport">
 
  <div class="header-raport">
-    <img src="https://raport.ipmo.my.id/logo.png" alt="Logo Sekolah" class="logo-sekolah">
+    <img src="logo.png" alt="Logo Sekolah" class="logo-sekolah">
     <div class="info-sekolah">
     <h1>LAPORAN PERKEMBANGAN SISWA <br> TK PUSPASARI I SURABAYA <br> TAHUN PELAJARAN 2025/2026</h1>
     <h2>  </h2>
@@ -83,26 +82,20 @@
     </td>
   </tr>
 </table>
-
-  <table class="section-table">
-  <tr>
-    <th>Nilai Agama dan Budi Pekerti</th>
-  </tr>
-  <tr>
-    <td>
-      <div class="content-flex-container">
-        
-        <div class="photo-side">
-          <img id="prevFotoAgama1" src="" alt="Foto Agama 1" class="foto-kegiatan-side" style="display:none;">
-          <img id="prevFotoAgama2" src="" alt="Foto Agama 2" class="foto-kegiatan-side" style="display:none;">
-        </div>
-
+<table class="section-table">
+    <tr>
+      <th colspan="2">Nilai Agama dan Budi Pekerti</th>
+    </tr>
+    <tr>
+      <td style="width: 40%; vertical-align: middle; text-align: center; padding: 4px 2px !important; border-right: none !important; white-space: nowrap;">
+        <img id="prevFotoAgama1" src="" alt="Foto Agama 1" class="foto-kegiatan-side" style="display:none;">
+        <img id="prevFotoAgama2" src="" alt="Foto Agama 2" class="foto-kegiatan-side" style="display:none;">
+      </td>
+      <td style="width: 60%; padding: 15px; border-left: none !important;">
         <div class="text-side" id="prevAgama"></div>
-
-      </div>
-    </td>
-  </tr>
-</table>
+      </td>
+    </tr>
+  </table>
 
  <table class="section-table">
   <tr>
