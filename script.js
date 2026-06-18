@@ -57,3 +57,82 @@ async function generateRaport() {
     
     alert("Raport Berhasil Di-generate! Silakan periksa di bagian bawah.");
 }
+
+function exportKeWord() {
+    // 1. Ambil seluruh isi HTML dari wadah rapot Anda
+    const isiRaport = document.getElementById('raport').innerHTML;
+
+    // 2. Template khusus Microsoft Word dengan pengunci warna (Anti-Dark Mode)
+    const templateWord = `
+    <html xmlns:o='urn:schemas-microsoft-com:office:office' 
+          xmlns:w='urn:schemas-microsoft-com:office:word' 
+          xmlns='http://www.w3.org/TR/REC-html40'>
+    <head>
+        <meta charset="utf-8">
+        <title>Raport Siswa</title>
+        <style>
+            /* KUNCI UTAMA: Paksa warna kertas selalu PUTIH dan teks HITAM di Word */
+            body { 
+                background-color: #ffffff !important; 
+                color: #000000 !important; 
+                font-family: 'Arial', 'Segoe UI', sans-serif;
+                padding: 20px;
+            }
+            table { 
+                width: 100%; 
+                border-collapse: collapse; 
+                margin-top: 15px; 
+                background-color: #ffffff !important;
+            }
+            th, td { 
+                border: 1px solid #000000 !important; 
+                padding: 8px; 
+                color: #000000 !important;
+                vertical-align: top;
+            }
+            th { 
+                background-color: #f2f2f2 !important; 
+                font-weight: bold; 
+                text-align: center; 
+            }
+            .text-isi-raport { 
+                text-align: justify; 
+                text-indent: 40px; 
+                font-size: 11pt; 
+                line-height: 1.5; 
+                color: #000000 !important;
+            }
+            .photo-container-center { 
+                text-align: center; 
+                padding: 10px; 
+            }
+            /* Batasi ukuran gambar logo sekolah agar tidak raksasa di Word */
+            img { 
+                max-width: 120px; 
+                height: auto; 
+            }
+        </style>
+    </head>
+    <body>
+        <div style="background-color: #ffffff !important; color: #000000 !important;">
+            ${isiRaport}
+        </div>
+    </body>
+    </html>`;
+
+    // 3. Proses konversi menjadi file dokumen Word
+    const blob = new Blob(['\ufeff' + templateWord], {
+        type: 'application/msword'
+    });
+
+    const url = URL.createObjectURL(blob);
+    const linkUnduh = document.createElement('a');
+    linkUnduh.href = url;
+    
+    // Nama file rapot saat diunduh
+    linkUnduh.download = 'Raport_Siswa_TK.doc'; 
+    
+    document.body.appendChild(linkUnduh);
+    linkUnduh.click();
+    document.body.removeChild(linkUnduh);
+}

@@ -32,8 +32,8 @@ body {
     left: 0;               /* Menaruh logo di ujung paling kiri */
     top: 50%;              /* Mengatur posisi vertikal di tengah */
     transform: translateY(-50%); /* Menyempurnakan posisi logo agar pas di tengah secara vertikal */
-    width: 100px;           /* Ukuran lebar logo (silakan sesuaikan) */
-    height: auto;
+    width: 125px;           /* Ukuran lebar logo (silakan sesuaikan) */
+  
 }
 
 .info-sekolah h2 {
@@ -201,12 +201,28 @@ body {
 .sig-col-center { width: 70%; text-align: right; }
 .space-ttd { height: 65px; }
 
+.btn-word {
+    background-color: #2b579a; /* Warna biru khas Word */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.btn-word:hover {
+    background-color: #1e3d6b;
+}
+
 /* PRINT SETUP */
 @media print {
     @page { 
         margin: 1cm 1.5cm; 
     }
-    
+    .btn-word {
+        display: none !important;
+    }
     .form-section { 
         display: none !important; 
     }

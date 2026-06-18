@@ -45,12 +45,13 @@
 
   <button onclick="generateRaport()">Generate</button>
   <button onclick="window.print()">Cetak PDF</button>
+  <button onclick="exportKeWord()" class="btn-word">Export ke Word</button>
 </div>
 
 <div class="page" id="raport">
 
  <div class="header-raport">
-    <img src="logo.png" alt="Logo Sekolah" class="logo-sekolah">
+    <img src="https://raport.ipmo.my.id/logo.png" alt="Logo Sekolah" class="logo-sekolah">
     <div class="info-sekolah">
     <h1>LAPORAN PERKEMBANGAN SISWA <br> TK PUSPASARI I SURABAYA <br> TAHUN PELAJARAN 2025/2026</h1>
     <h2>  </h2>
@@ -79,8 +80,6 @@
   <tr>
     <td>
         <div class="text-side-pendahuluan" id="prevpendahuluan"></div>
-
-      </div>
     </td>
   </tr>
 </table>
@@ -211,7 +210,8 @@
       </div>
     </div>
 
-  </div> </div>
+  </div>
+ </div>
 
 <script src="script.js"></script>
 </body>
